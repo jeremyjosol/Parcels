@@ -23,11 +23,18 @@ namespace Parcels.Tests
       Assert.AreEqual(1000, result);
     }
     [TestMethod]
-    public void ShippingPrice_ReturnsShippingPriceOfInstanceOfParcel_Int()
+    public void ShippingPrice_ReturnsShippingPriceOfInstanceOfParcelWithGreaterCubicSize_Int()
     {
       Parcel newParcel = new Parcel(10, 10, 10, 150);
       int result = newParcel.ShippingPrice(2000, 10);
       Assert.AreEqual(12, result);
+    }
+    [TestMethod]
+    public void ShippingPrice_ReturnsShippingPriceOfInstanceOfParcelWithLesserThanCubicSize_Int()
+    {
+      Parcel newParcel = new Parcel(10, 10, 10, 150);
+      int result = newParcel.ShippingPrice(1500, 20);
+      Assert.AreEqual(20, result);
     }
   }
 }
