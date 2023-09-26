@@ -16,5 +16,10 @@ namespace Parcels.Models
     Height = height;
     Weight = weight;
   }
+  public int CubicSize(int length, int width, int height)
+  {
+    int cubicSize = length * width * height;
+    return cubicSize;
+  }
   }
 }
