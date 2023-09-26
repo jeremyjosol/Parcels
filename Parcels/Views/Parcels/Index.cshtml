@@ -11,17 +11,20 @@
   </head>
   <body>
     @using Parcels.Models;
-    <h1>Estimate Parcels Shipping Price!</h1>
+    <h1>Estimate Parcel Shipping Price!</h1>
     @foreach (Parcel newParcel in Model)
     {
-    
-    <p>@newParcel.Length.ToString()</p>
-    <p>@newParcel.Width.ToString()</p>
-    <p>@newParcel.Height.ToString()</p>
-    <p>@newParcel.Weight.ToString() lbs.</p>
-    <p>@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height)</p>
-    <p>$@newParcel.ShippingPrice(@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height), newParcel.Weight)</p>
+    <div>
+    <h3 style="background-color: grey;">Parcel Dimensions:</h3>
+    <ul>
+    <li><strong>Length</strong>: <em>@newParcel.Length</em></li>
+    <li><strong>Width</strong>: <em>@newParcel.Width</em></li>
+    <li><strong>Height</strong>: <em>@newParcel.Height</em></li>
+    </ul>
+    <strong>Your package is</strong>: <em>@newParcel.Weight.ToString() lbs.</em>
+    <strong>the cubic size is</strong>: <em>@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height) inches</em>
+    and the <strong>total shipping price</strong>: <em>$@newParcel.ShippingPrice(@newParcel.Volume, newParcel.Weight)</em>
+    </div>
     }
-
   </body>
 </html>

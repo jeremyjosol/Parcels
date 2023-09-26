@@ -9,7 +9,8 @@ namespace Parcels.Controllers
     [HttpGet("/parcels")]
     public ActionResult Index()
     {
-    return View();
+      List<Parcel> newParcels = Parcel.GetAll();
+      return View(newParcels);
     }
     [HttpGet("/parcels/new")]
     public ActionResult CreateForm()
