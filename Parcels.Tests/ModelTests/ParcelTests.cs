@@ -12,5 +12,11 @@ namespace Parcels.Tests
       Parcel newParcel = new Parcel(10, 10, 10, 150);
       Assert.AreEqual(10, newParcel.Length);
     }
+    [TestMethod]
+    public void Parcel_CreatesInstanceOfParcelAndChecksWidth_Parcel()
+    {
+      Parcel newParcel = new Parcel(10, 10, 10, 150);
+      Assert.AreEqual(10, newParcel.Width);
+    }
   }
 }
