@@ -15,5 +15,12 @@ namespace Parcels.Tests
       Assert.AreEqual(10, newParcel.Height);
       Assert.AreEqual(150, newParcel.Weight);
     }
+    [TestMethod]
+    public void CubicSize_ReturnsCubicSizeOfInstanceOfParcel_Int()
+    {
+      Parcel newParcel = new Parcel(10, 10, 10, 150);
+      int result = newParcel.CubicSize(10, 10, 10);
+      Assert.AreEqual(1000, result);
+    }
   }
 }
