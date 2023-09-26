@@ -12,5 +12,16 @@
   <body>
     @using Parcels.Models;
     <h1>Estimate Parcels Shipping Price!</h1>
+    @foreach (Parcel newParcel in Model)
+    {
+    
+    <p>@newParcel.Length.ToString()</p>
+    <p>@newParcel.Width.ToString()</p>
+    <p>@newParcel.Height.ToString()</p>
+    <p>@newParcel.Weight.ToString() lbs.</p>
+    <p>@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height)</p>
+    <p>$@newParcel.ShippingPrice(@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height), newParcel.Weight)</p>
+    }
+
   </body>
 </html>
