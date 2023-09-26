@@ -8,5 +8,5 @@
 ## Available Routes
 
 * localhost:5000/
-* localhost:5000/items/new
-* localhost:5000/items
+* localhost:5000/parcels/
+* localhost:5000/parcels/new
