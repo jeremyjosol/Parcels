@@ -10,10 +10,16 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <form action="/items" method="post">
-      <label for="description">Estimate price</label>
-      <input id="description" name="description" type="text">
-      <button type="submit">Submit</button>
+    <form action="/parcels" method="post">
+      <label for="length">Length</label>
+      <input id="length" name="length" type="number">
+      <label for="width">Width</label>
+      <input id="width" name="width" type="number">
+      <label for="height">Height</label>
+      <input id="height" name="height" type="number">
+      <label for="weight">Weight</label>
+      <input id="weight" name="weight" type="numbrer">
+      <button type="submit">Shipping Price</button>
     </form>
   </body>
 </html>
