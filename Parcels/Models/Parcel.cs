@@ -21,5 +21,13 @@ namespace Parcels.Models
     int cubicSize = length * width * height;
     return cubicSize;
   }
+  public int ShippingPrice(int cubicSize, int weight)
+  {
+    int shippingPrice = 0;
+    if (cubicSize > 1728)
+    {
+      shippingPrice = cubicSize / 166;
+    }
+  }
   }
 }
