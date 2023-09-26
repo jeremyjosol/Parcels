@@ -9,25 +9,38 @@ namespace Parcels.Models
    public int Height { get; set; }
    public int Weight { get; set; }
   
-  public Parcel(int length, int width, int height, int weight)
-  {
-    Length = length;
-    Width = width;
-    Height = height;
-    Weight = weight;
-  }
-  public int CubicSize(int length, int width, int height)
-  {
-    int cubicSize = length * width * height;
-    return cubicSize;
-  }
-  public int ShippingPrice(int cubicSize, int weight)
-  {
-    int shippingPrice = 0;
-    if (cubicSize > 1728)
+    public Parcel(int length, int width, int height, int weight)
     {
-      shippingPrice = cubicSize / 166;
+      Length = length;
+      Width = width;
+      Height = height;
+      Weight = weight;
     }
-  }
+    public int CubicSize(int length, int width, int height)
+    {
+      int cubicSize = length * width * height;
+      return cubicSize;
+    }
+    public int ShippingPrice(int cubicSize, int weight)
+    {
+      int shippingPrice = 0;
+      if (cubicSize > 1728)
+      {
+        int dimWeight = cubicSize / 166;
+        if (weight > dimWeight)
+        {
+          shippingPrice = weight;
+        }
+        else
+        {
+          shippingPrice = dimWeight;
+        }
+      }
+      else
+      {
+        shippingPrice = weight;
+      }
+      return shippingPrice;
+    }
   }
 }
