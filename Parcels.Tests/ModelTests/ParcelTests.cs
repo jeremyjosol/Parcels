@@ -22,5 +22,12 @@ namespace Parcels.Tests
       int result = newParcel.CubicSize(10, 10, 10);
       Assert.AreEqual(1000, result);
     }
+    [TestMethod]
+    public void ShippingPrice_ReturnsShippingPriceOfInstanceOfParcel_Int()
+    {
+      Parcel newParcel = new Parcel(10, 10, 10, 150);
+      int result = newParcel.ShippingPrice(2000, 10);
+      Assert.AreEqual(12, result);
+    }
   }
 }
