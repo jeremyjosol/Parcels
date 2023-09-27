@@ -11,9 +11,12 @@
   </head>
   <body>
     @using Parcels.Models;
+
     <h1>Estimate Parcel Shipping Price!</h1>
+
     @foreach (Parcel newParcel in Model)
     {
+
     <div>
     <h3 style="background-color: grey;">Parcel Dimensions:</h3>
     <ul>
@@ -21,11 +24,14 @@
     <li><strong>Width</strong>: <em>@newParcel.Width "</em></li>
     <li><strong>Height</strong>: <em>@newParcel.Height "</em></li>
     </ul>
+    
     <strong>Your package is</strong>: <em>@newParcel.Weight.ToString() lbs,</em>
     the <strong>cubic size is</strong>: <em>@newParcel.CubicSize(newParcel.Length, newParcel.Width, newParcel.Height) ",</em>
     and the <strong>total shipping price is</strong>: <em>$@newParcel.ShippingPrice(@newParcel.Volume, newParcel.Weight).</em>
     </div>
+
     }
+
     <a href='/parcels/new'>Add a new parcel</a>
   </body>
 </html>
